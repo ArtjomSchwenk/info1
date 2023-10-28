@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=InputLabel
+comment0.text=\n\ This\ Label\ can\ be\ used\ to\ react\ to\ keyboard\ input\ and\ display\ it.\n\ \n\ @author\ Marco\ Jakob\n\ @version\ 1.3\ (2012-07-04)\n
+comment1.params=text\ width\ height\ font
+comment1.target=InputLabel(java.lang.String,\ int,\ int,\ java.awt.Font)
+comment1.text=\n\ Constructor\ for\ an\ InputLabel.\n
+comment2.params=maxLength
+comment2.target=void\ setMaxLength(int)
+comment2.text=\n\ Sets\ the\ maximum\ length\ of\ the\ input\ String.\n
+comment3.params=allowSpace
+comment3.target=void\ setAllowSpace(boolean)
+comment3.text=\n\ Sets\ whether\ spaces\ should\ be\ allowed\ as\ input.\n
+comment4.params=allowBackspace
+comment4.target=void\ setAllowBackspace(boolean)
+comment4.text=\n\ Sets\ whether\ backspaces\ should\ be\ allowed\ as\ input.\n
+comment5.params=
+comment5.target=boolean\ wasTextChanged()
+comment5.text=\n\ Returns\ whether\ the\ text\ was\ changed.\n
+comment6.params=key
+comment6.target=void\ handleKeyPress(java.lang.String)
+comment6.text=\n\ Changes\ the\ label\ text\ according\ to\ the\ pressed\ key.\n\ \n\ Only\ single\ characters\ are\ supported.\n\ "space"\ and\ "backspace"\ can\ optionally\ be\ supported.\n
+numComments=7
