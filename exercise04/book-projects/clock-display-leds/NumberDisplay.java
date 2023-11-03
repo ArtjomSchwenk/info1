@@ -34,6 +34,7 @@ public class NumberDisplay implements DisplayInterface
      */
     public void updateDisplay(String twoChars){
         if (lower != null)
+            //lower.displayChar(twoChars.charAt(1));
             lower.displayChar(twoChars.charAt(1));
         if (upper != null)
             upper.displayChar(twoChars.charAt(0));

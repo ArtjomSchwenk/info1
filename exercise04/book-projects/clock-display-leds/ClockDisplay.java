@@ -82,8 +82,12 @@ public class ClockDisplay
     {
         int hours = minutesInDay / MINUTES_IN_HOUR;
         int minutes = minutesInDay % MINUTES_IN_HOUR;
-        displayString = getDisplayValue(hours) + ":" + 
-        getDisplayValue(minutes);
+        if(hours <= 12){
+            displayString = getDisplayValue(hours % 12) + ":" + getDisplayValue(minutes) + " am";
+            }
+        else{
+            displayString = getDisplayValue(hours % 12) + ":" + getDisplayValue(minutes) + " pm";
+            }
         updateRealDisplay();
     }
 

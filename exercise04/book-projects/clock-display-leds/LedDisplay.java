@@ -3,7 +3,7 @@ import LEDs.*;
 public class LedDisplay extends ClockDisplay
 {
     static{
-        WITH_AM_PM = false;
+        WITH_AM_PM = true;
     }
     private LEDClockDisplay leds;
     private NumberDisplay ampm;
@@ -23,9 +23,10 @@ public class LedDisplay extends ClockDisplay
         leds = new LEDClockDisplay(WITH_AM_PM);
         hours = new NumberDisplay(); 
         minutes = new NumberDisplay();
-
+        ampm = new NumberDisplay();
+        
         leds.add(hours,minutes);
-
+        leds.add(ampm);
     }
 
     /**
@@ -38,10 +39,21 @@ public class LedDisplay extends ClockDisplay
         int valueMinutes = currentMinutes % MINUTES_IN_HOUR;
         int hour_limit = HOURS_IN_DAY;
         int valueHours = (currentMinutes % (hour_limit*MINUTES_IN_HOUR)) / MINUTES_IN_HOUR;
-
-        hours.updateDisplay(valueHours);
-        minutes.updateDisplay(valueMinutes);
-
+        
+        if(valueHours < 12){
+            hours.updateDisplay(valueHours);
+            minutes.updateDisplay(valueMinutes);
+            ampm.updateDisplay("AM");
+        }
+        else{
+            hours.updateDisplay(valueHours % 12);
+            minutes.updateDisplay(valueMinutes);
+            ampm.updateDisplay("PM");
+        }
+        if(valueHours == 0){
+            hours.updateDisplay(12);
+            minutes.updateDisplay(valueMinutes);
+        }
     }
 
 }
