@@ -50,7 +50,9 @@ public class ClockDisplayWorldAmPm extends World
         DigitDisplayKara tenMinutes = new DigitDisplayKara(6,10,2);
         HoursDisplayKara hours = new HoursDisplayKara(12,60,0);
         // Add AmPMDisplayKara here
+        AmPmDisplayKara ampm = new AmPmDisplayKara(2,12,2);
         
+        addObject(ampm,RIGHT+2,BASELINE);
         addObject(minutes,RIGHT,BASELINE);
         addObject(tenMinutes,RIGHT-1,BASELINE);
         showText(":", RIGHT-2,BASELINE+3);
