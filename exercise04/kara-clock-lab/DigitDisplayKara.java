@@ -116,7 +116,11 @@ public class DigitDisplayKara extends Kara
     }
 
     public void initialize(int leaves){
-
+        int i = 0;
+        while(i < leaves){
+            increment();
+            i++;
+        }
     }
 
     public String getDisplayText(int count){
