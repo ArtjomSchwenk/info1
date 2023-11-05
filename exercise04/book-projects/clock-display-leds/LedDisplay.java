@@ -40,19 +40,27 @@ public class LedDisplay extends ClockDisplay
         int hour_limit = HOURS_IN_DAY;
         int valueHours = (currentMinutes % (hour_limit*MINUTES_IN_HOUR)) / MINUTES_IN_HOUR;
         
+        /** The time of the display will be presented wit am or 
+         * pm. Hours % 12 wont be 0 am/pm, but 12 am/pm. **/
         if(valueHours < 12){
-            hours.updateDisplay(valueHours);
-            minutes.updateDisplay(valueMinutes);
-            ampm.updateDisplay("AM");
+            if(valueHours == 0){
+                hours.updateDisplay(12);
+            }
+            else{
+                hours.updateDisplay(valueHours);
+            }
+                minutes.updateDisplay(valueMinutes);
+                ampm.updateDisplay("AM");
         }
         else{
-            hours.updateDisplay(valueHours % 12);
+            if(valueHours == 12) {
+                hours.updateDisplay(12);
+            }
+            else{
+                hours.updateDisplay(valueHours % 12);
+            }
             minutes.updateDisplay(valueMinutes);
             ampm.updateDisplay("PM");
-        }
-        if(valueHours == 0){
-            hours.updateDisplay(12);
-            minutes.updateDisplay(valueMinutes);
         }
     }
 

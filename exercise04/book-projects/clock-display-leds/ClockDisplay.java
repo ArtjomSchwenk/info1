@@ -21,8 +21,10 @@ public class ClockDisplay
     public final static int MINUTES_LIMIT = HOURS_IN_DAY * MINUTES_IN_HOUR;
 
     private int minutesInDay = 0;
+    private int alarmTime = 0;
+    private boolean alarmStatus = false;
     private String displayString;    // simulates the actual display
-
+    
     /**
      * Constructor for ClockDisplay objects. This constructor 
      * creates a new clock set at 00:00.
@@ -51,6 +53,7 @@ public class ClockDisplay
     {
         modCount++; // addition for time sync, ignore
         minutesInDay = (minutesInDay + 1) % MINUTES_LIMIT;
+        
         updateDisplay();
     }
 
@@ -74,7 +77,22 @@ public class ClockDisplay
     {
         return displayString;
     }
-
+    
+/**
+     * Set an Alarm that prints an output in the terminal
+     */
+    public void setAlarm(int hour, int minute)
+    {
+        alarmTime = MINUTES_IN_HOUR*hour + minute;
+    }
+    
+    public void alarmOn(){
+                alarmStatus = true;
+            }
+    public void alarmOff(){
+                alarmStatus = false;
+            }
+    
     /**
      * Update the internal string that represents the display.
      */
@@ -82,6 +100,9 @@ public class ClockDisplay
     {
         int hours = minutesInDay / MINUTES_IN_HOUR;
         int minutes = minutesInDay % MINUTES_IN_HOUR;
+        if(minutesInDay == alarmTime && alarmStatus == true){
+            System.out.println("Riiiing!");
+        }
         if(hours <= 12){
             displayString = getDisplayValue(hours % 12) + ":" + getDisplayValue(minutes) + " am";
             }
