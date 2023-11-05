@@ -51,7 +51,12 @@ public class LedDisplay extends ClockDisplay
                 ampm.updateDisplay("AM");
         }
         else{
-            hours.updateDisplay(valueHours % 12);
+            if(valueHours == 12) {
+                hours.updateDisplay(12);
+            }
+            else{
+                hours.updateDisplay(valueHours % 12);
+            }
             minutes.updateDisplay(valueMinutes);
             ampm.updateDisplay("PM");
         }
