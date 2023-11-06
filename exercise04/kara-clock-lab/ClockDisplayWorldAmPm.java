@@ -48,9 +48,9 @@ public class ClockDisplayWorldAmPm extends World
         // int rollOverLimit, long placeValue, int stepsToNextDigit
         DigitDisplayKara minutes = new DigitDisplayKara(10,1,1);
         DigitDisplayKara tenMinutes = new DigitDisplayKara(6,10,2);
-        HoursDisplayKara hours = new HoursDisplayKara(12,60,0);
+        HoursDisplayKara hours = new HoursDisplayKara(12,60,-5);
         // Add AmPMDisplayKara here
-        AmPmDisplayKara ampm = new AmPmDisplayKara(2,12,2);
+        AmPmDisplayKara ampm = new AmPmDisplayKara(2,12 * 60,0);
         
         addObject(ampm,RIGHT+2,BASELINE);
         addObject(minutes,RIGHT,BASELINE);

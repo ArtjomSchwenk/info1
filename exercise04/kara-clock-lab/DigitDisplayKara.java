@@ -116,11 +116,38 @@ public class DigitDisplayKara extends Kara
     }
 
     public void initialize(int leaves){
-        int i = 0;
+        /*int i = 0;
         while(i < leaves){
             increment();
             i++;
+        }*/
+        int stepsUp = leaves;
+        int leafCount = 0;
+        boolean gesammelt = false;
+        move();
+        System.out.println(leaves);
+        if(!onLeaf()){
+            turnAround();
+            move();
+            turnAround();
         }
+        while(onLeaf()){
+            removeLeaf();
+            leafCount++;
+            move();
+            gesammelt = true;
+        }
+        if(gesammelt){
+            turnAround();
+            multiMove(leafCount + 1);
+            turnAround();
+        }
+        while(stepsUp > 0){
+            move();
+            putLeaf();
+            stepsUp--;
+        }
+        multiMove(-leaves);
     }
 
     public String getDisplayText(int count){

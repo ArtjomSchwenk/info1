@@ -21,11 +21,9 @@ public class AmPmDisplayKara extends DigitDisplayKara
     }
     
     public String getDisplayText(int count){
-        if (count == 0){
+        if (count == 1)
             return "AM";
-        }
-        else{
-            return "PM";
-        }
+        return "PM";
+        
     }
 }
