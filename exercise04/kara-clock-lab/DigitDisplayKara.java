@@ -116,11 +116,6 @@ public class DigitDisplayKara extends Kara
     }
 
     public void initialize(int leaves){
-        /*int i = 0;
-        while(i < leaves){
-            increment();
-            i++;
-        }*/
         int stepsUp = leaves;
         int leafCount = 0;
         boolean gesammelt = false;
