@@ -149,4 +149,30 @@ public class NotebookGUI
         cons.gridheight = h;
         panel.add(comp, cons);
     }
+    /**
+     * getAll()
+     * removeNotesWithIndex()
+     * removeNotes()
+     * getNotesWith()
+     * getAllNumbered()
+     */
+    public void getAll(){
+    
+    }
+    
+    public void getWith(){
+    
+    }
+    
+    private void getAllNumbered(){
+    
+    }
+    
+    private void removeNotes(){
+    
+    }
+    
+    private void removeNotesWithIndex(){
+    
+    }
 }

@@ -57,6 +57,24 @@ public class Notebook
             // This is not a valid note number, so do nothing.
         }
     }
-
+    public String getAll(){
+        return "getAll() not yet implemented";
+    }
+    
+    public String getNotesWith(String x){
+        return "getNotesWith() not yet implemented";
+    }
+    
+    public String getAllNumbered(){
+        return "getAllNumbered() not yet implemented";
+    }
+    
+    public String removeNotes(String x){
+        return "removeNotes() not yet implemented";
+    }
+    
+    public String removeNotesWithIndex(String x){
+        return "removeNotesWithIndex() not yet implemented";
+    }
 
 }
