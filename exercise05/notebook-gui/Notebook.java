@@ -57,8 +57,20 @@ public class Notebook
             // This is not a valid note number, so do nothing.
         }
     }
+    
     public String getAll(){
-        return "getAll() not yet implemented";
+        int i = 0;
+        if(numberOfNotes() == 0){
+           return "No notes Stored";
+        }
+        else{
+            
+            while(i < numberOfNotes()){
+                System.out.println("Note: " + notes.get(i));
+                i++;
+            }
+        }
+        return "All stored notes";
     }
     
     public String getNotesWith(String x){
