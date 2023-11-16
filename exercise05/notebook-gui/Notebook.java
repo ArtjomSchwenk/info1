@@ -59,18 +59,18 @@ public class Notebook
     }
     
     public String getAll(){
-        int i = 0;
+        String x = "";
+        String y = "";
         if(numberOfNotes() == 0){
-           return "No notes Stored";
+           //return "No notes Stored";
         }
-        else{
-            
-            while(i < numberOfNotes()){
-                System.out.println("Note: " + notes.get(i));
-                i++;
-            }
+        
+        for(int i = 0; i < numberOfNotes(); i++){
+            x = x + (notes.get(i) + "\n");
+            y = y + notes.get(i);
         }
-        return "All stored notes";
+        System.out.print(x);
+        return y;
     }
     
     public String getNotesWith(String x){
