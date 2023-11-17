@@ -61,11 +61,11 @@ public class Notebook
     public String getAll(){
         String x = "";
         String y = "";
-        if(numberOfNotes() == 0){
-           //return "No notes Stored";
+        if(notes.size() == 0){
+           return "No notes Stored";
         }
         
-        for(int i = 0; i < numberOfNotes(); i++){
+        for(int i = 0; i < notes.size(); i++){
             x = x + (notes.get(i) + "\n");
             y = y + notes.get(i);
         }
@@ -73,18 +73,45 @@ public class Notebook
         return y;
     }
     
-    public String getNotesWith(String x){
-        return "getNotesWith() not yet implemented";
+    public String getNotesWith(String searchString){
+        String x = "";
+        String y = "";
+        for(int i = 0; i < notes.size(); i++){
+            if(searchString.equals(notes.get(i))){
+                x = x + (notes.get(i) + "\n");
+                y = i + notes.get(i);
+            }
+        }
+        System.out.print(x);
+        return y;
     }
     
     public String getAllNumbered(){
-        return "getAllNumbered() not yet implemented";
+        String x = "";
+        String y = "";
+        if(notes.size() == 0){
+           return "No notes Stored";
+        }
+        
+        for(int i = 0; i < notes.size(); i++){
+            x = x + (i + notes.get(i) + "\n");
+            y = i + y + notes.get(i);
+        }
+        System.out.print(x);
+        return y;
     }
     
-    public String removeNotes(String x){
-        return "removeNotes() not yet implemented";
+    public void removeNotes(String searchString){
+        Iterator<String> it = notes.iterator();
+        
+        for(int i = 0; i < notes.size(); i++){
+            it.next();
+            if(searchString.equals(notes.get(i))){
+                it.remove();
+            }
+        }
     }
-    
+
     public String removeNotesWithIndex(String x){
         return "removeNotesWithIndex() not yet implemented";
     }
