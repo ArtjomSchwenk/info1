@@ -103,17 +103,21 @@ public class Notebook
     
     public void removeNotes(String searchString){
         Iterator<String> it = notes.iterator();
+        String next;
         
-        for(int i = 0; i < notes.size(); i++){
-            it.next();
-            if(searchString.equals(notes.get(i))){
+        while(it.hasNext()){
+            next = it.next();
+            if(next.equals(searchString)){
                 it.remove();
             }
         }
     }
 
-    public String removeNotesWithIndex(String x){
-        return "removeNotesWithIndex() not yet implemented";
+    public void removeNotesWithIndex(String searchString){
+         for(int i = 0; i < numberOfNotes(); i++){
+            if(searchString.equals(notes.get(i))){
+                notes.remove(i);
+            }
+        }
     }
-
 }
