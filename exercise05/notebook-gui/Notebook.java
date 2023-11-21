@@ -95,7 +95,7 @@ public class Notebook
         
         for(int i = 0; i < notes.size(); i++){
             x = x + (i + notes.get(i) + "\n");
-            y = i + y + notes.get(i);
+            y = y + i + notes.get(i);
         }
         System.out.print(x);
         return y;
@@ -114,8 +114,9 @@ public class Notebook
     }
 
     public void removeNotesWithIndex(String searchString){
-         for(int i = 0; i < numberOfNotes(); i++){
-            if(searchString.equals(notes.get(i))){
+        for(int i = 0; i < numberOfNotes(); i++){
+            String x = "" + i;
+            if(searchString.equals(x)){
                 notes.remove(i);
             }
         }
