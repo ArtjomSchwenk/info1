@@ -14,6 +14,17 @@ public class MyKara extends Kara
      */
     public void act()
     {
-        // Add your action code here.
+        int n = 20;
+        for(int i = 0; i < n; i++){
+            putNMove(i);
+            turnRight();
+        }
+    }
+    
+    public void putNMove(int n){
+        for(int i = 0; i <= n; i++){
+            putLeaf();
+            move();
+        }
     }
 }
