@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Collection;
 /**
  * A class to maintain an arbitrarily long list of notes.
  * Notes are numbered for external reference by a human user.

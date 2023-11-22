@@ -19,12 +19,12 @@ public class PreLab
         }
     }
     public int sumBetween(int a, int b){ 
-	int sum = 0;
+    int sum = 0;
         /*Check if a != b and increase a’s counter by one after one run. b will not get included in the sum if a’s counter reaches the value of b.*/
-	for(; a != b; a++) {
-		sum +=  a;
-	}
-	return sum;
+    for(; a != b; a++) {
+        sum +=  a;
+    }
+    return sum;
     }
     
     public void printStudentList(Collection<Student> imi1)
@@ -36,7 +36,24 @@ public class PreLab
     }
     
     public int countPrimesSmallerThan1000(){
-        return 0;
+	Collection<Integer> primes = new ArrayList<>();
+        
+	int i = 0;
+        while(i <= 1000){
+            int j = i;
+            int isDevisibleCount = 0;
+            while(j != 0) {
+                if(i % j == 0){
+                    isDevisibleCount++;
+                } 
+                j--;
+            }
+            
+            if(isDevisibleCount == 2) {
+                primes.add(i);
+            }
+            i++;
+        }
+        return primes.size();
     }
-    
 }
