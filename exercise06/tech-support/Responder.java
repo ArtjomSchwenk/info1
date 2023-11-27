@@ -7,16 +7,20 @@
  */
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.HashMap;
 public class Responder
 {
     private Random rand;
     private ArrayList<String> responses;
+    private HashMap<String, Integer> map;
     /**
      * Construct a Responder - nothing to do
      */
     public Responder(){
         rand = new Random();
         responses = new ArrayList<>();
+        map = new HashMap<>();
+        fillMap();
         fillResponses();
     }
 
@@ -24,30 +28,27 @@ public class Responder
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse()
-    {
-        int index = rand.nextInt(responses.size());
-        return responses.get(index);
+    public String generateResponse(String input) {
+        String[] words = input.split(" ");
+        
+        for(int i = 0; i < words.length; i++){
+            if(map.containsKey(words[i])){
+                return responses.get(map.get(words[i]));
+            }
+        }
+        return responses.get(0);
+    }
+    
+    private void fillMap(){
+        map.put("help", 1);
+        map.put("problem", 2);
+        map.put("windows", 3);
     }
     
     private void fillResponses() {
-        responses.add("That sounds odd. Could you describe \n" +
-        "that problem in more detail?");
-        responses.add("No other customer has ever \n" +
-        "complained about this before. \n" +
-        "What is your system configuration?");
-        responses.add("That’s a known problem with Vista." +
-        "Windows 7 is much better.");
-        responses.add("I need a bit more information on that.");
-        responses.add("Have you checked that you do not \n" +
-        "have a dll conflict?");
-        responses.add("That is explained in the manual. \n" +
-        "Have you read the manual?");
-        responses.add("Your description is a bit \n" +
-        "wishy-washy. Have you got an expert \n" +
-        "there with you who could describe \n" +
-        "this more precisely?");
-        responses.add("That’s not a bug, it’s a feature!");
-        responses.add("Could you elaborate on that?");
+        responses.add("Mhm...");
+        responses.add("There is no Help, only salvation");
+        responses.add("Violence is never the answer, it's the solution");
+        responses.add("I use Arch btw");
     }
 }
