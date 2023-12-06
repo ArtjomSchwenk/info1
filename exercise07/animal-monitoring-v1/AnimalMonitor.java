@@ -8,7 +8,7 @@ import java.util.Iterator;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29 (imperative)
  */
-public class AnimalMonitor 
+public class AnimalMonitor
 {
     // Records of all the sightings of animals.
     private ArrayList<Sighting> sightings;
@@ -36,9 +36,12 @@ public class AnimalMonitor
      */
     public void printList()
     {
-        for(Sighting record : sightings) {
-            System.out.println(record.getDetails());
-        }
+        sightings.forEach(
+        record -> System.out.println(record.getDetails())
+        );
+        //for(Sighting record : sightings) {
+        //    System.out.println(record.getDetails());
+        //}
     }
     
     /**
@@ -47,11 +50,34 @@ public class AnimalMonitor
      */
     public void printSightingsOf(String animal)
     {
-        for(Sighting record : sightings) {
-            if(animal.equals(record.getAnimal())) {
-                System.out.println(record.getDetails());
-            }
-        }
+        sightings.stream()
+            .filter(sighting -> animal.equals(sighting.getAnimal()))
+            .forEach(sighting -> System.out.println(sighting.getDetails()));
+        //for(Sighting record : sightings) {
+        //    if(animal.equals(record.getAnimal())) {
+        //        System.out.println(record.getDetails());
+        //    }
+        //}
+    }
+    
+    public void printSightingsInPeriod(int periodID){
+        sightings.stream()
+            .filter(sighting -> periodID == sighting.getPeriod())
+            .forEach(sighting -> System.out.println(sighting.getDetails()));        
+    }
+    
+    public void printSightingsOfInPeriod(String animal, int periodID){
+        sightings.stream()
+            .filter(sighting -> animal.equals(sighting.getAnimal()))
+            .filter(sighting -> periodID == sighting.getPeriod())
+            .forEach(sighting -> System.out.println(sighting.getDetails()));
+    }
+    
+    public void printCounts(String animal){
+        sightings.stream()
+            .filter(sighting -> animal.equals(sighting.getAnimal()))
+            .map(sighting -> sighting.getCount());
+            //.forEach(sighting -> System.out.println(sighting.getDetails()));
     }
     
     /**
@@ -76,11 +102,15 @@ public class AnimalMonitor
     public void printEndangered(ArrayList<String> animalNames, 
                                 int dangerThreshold)
     {
-        for(String animal : animalNames) {
-            if(getCount(animal) <= dangerThreshold) {
-                System.out.println(animal + " is endangered.");
-            }
-        }
+        sightings.stream()
+            .filter(sighting -> dangerThreshold >= sighting.getCount())
+            .forEach(sighting -> System.out.println(sighting.getAnimal()));
+        
+        //for(String animal : animalNames) {
+        //    if(getCount(animal) <= dangerThreshold) {
+        //        System.out.println(animal + " is endangered.");
+        //    }
+        //}
     }
     
     /**
