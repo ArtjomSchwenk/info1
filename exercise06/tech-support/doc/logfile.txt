@@ -1,0 +1,35 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/share/bluej/jdk/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+17
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/javafx-swing-20.0.1-linux.jar:/usr/share/bluej/javafx-controls-20.0.1.jar:/usr/share/bluej/javafx-graphics-20.0.1-linux.jar:/usr/share/bluej/javafx-media-20.0.1-linux.jar:/usr/share/bluej/javafx-base-20.0.1.jar:/usr/share/bluej/javafx-web-20.0.1-linux.jar:/usr/share/bluej/javafx-controls-20.0.1-linux.jar:/usr/share/bluej/javafx-graphics-20.0.1.jar:/usr/share/bluej/javafx-base-20.0.1-linux.jar:/usr/share/bluej/javafx-fxml-20.0.1-linux.jar:/usr/share/bluej/javafx-media-20.0.1.jar:/usr/share/bluej/junit-platform-launcher-1.5.2.jar:/usr/share/bluej/junit-platform-commons-1.5.2.jar:/usr/share/bluej/junit-jupiter-5.5.2.jar:/usr/share/bluej/junit-jupiter-params-5.5.2.jar:/usr/share/bluej/junit-platform-engine-1.5.2.jar:/usr/share/bluej/junit-vintage-engine-5.5.2.jar:/usr/share/bluej/junit-platform-suite-api-1.5.2.jar:/usr/share/bluej/junit-jupiter-engine-5.5.2.jar:/usr/share/bluej/junit-jupiter-api-5.5.2.jar:/usr/share/bluej/junit-4.12.jar:/usr/share/bluej/hamcrest-core-1.3.jar:/usr/share/bluej/opentest4j-1.2.0.jar:/usr/share/bluej/lang-stride.jar:/home/artjom/info1/exercise06/tech-support
+-d
+/home/artjom/info1/exercise06/tech-support/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+/home/artjom/info1/exercise06/tech-support/Responder.java
+<---- end of javadoc command ---->
+Loading source file /home/artjom/info1/exercise06/tech-support/Responder.java...
+Constructing Javadoc information...
+Standard Doclet version 17.0.4.1+1
+Building tree for all the packages and classes...
+Generating /home/artjom/info1/exercise06/tech-support/doc/Responder.html...
+/home/artjom/info1/exercise06/tech-support/Responder.java:22: warning: Tag @author cannot be used in constructor documentation.  It can only be used in the following types of documentation: overview, module, package, class/interface.
+ * @author Artjom Schwenk, Daniel Antropow, Christan Paust and Anton Basjukoff
+   ^
+Generating /home/artjom/info1/exercise06/tech-support/doc/package-summary.html...
+Generating /home/artjom/info1/exercise06/tech-support/doc/index.html...
+1 warning
